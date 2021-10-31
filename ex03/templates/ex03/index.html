@@ -1,0 +1,14 @@
+{% extends 'ex03/base.html' %}
+{% load static %}
+{% block title %}Ex03{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock %}
+{% block content %}
+    <table>
+        <tr><th>Black</th><th>Red</th><th>Blue</th><th>Green</th></tr>
+        {% for dict in colors %}
+            <tr><td style="text-align: center; color:red; background: {{ dict.black }};">{{ forloop.counter }}</td><td style="background: {{ dict.red }};"></td><td style="background: {{ dict.blue }};"></td><td style="background: {{ dict.green }};"></td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}
